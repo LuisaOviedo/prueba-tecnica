@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class TarjetaService {
 
-  private url = "http://localhost:8080/actividad";
+  private url = "https://prueba-tecnica-luisa-oviedo.herokuapp.com/actividad";
 
   constructor(private http: HttpClient) {
   }
