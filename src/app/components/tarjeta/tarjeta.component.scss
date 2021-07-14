@@ -1,0 +1,24 @@
+.tarjeta {
+    display: flex;
+    padding: 0px 10px 10px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: default;
+    background: white;
+    font-size: 14px;
+    user-select: none;
+}
+
+.avatar {
+    min-width: 25%;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 80px;
+}
+
+.tiempo-restante {
+    font-size: 10px;
+}

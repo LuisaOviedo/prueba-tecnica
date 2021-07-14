@@ -1,0 +1,12 @@
+<div class="tarjeta">
+    <div class="avatar">
+        <img width="80px" height="80px" [src]="imagen" alt="">
+    </div>
+    <div>
+        <h2>{{nombre}}</h2>
+        <p>{{descripcion}}</p>
+        <span><strong>Fecha de entrega:</strong> {{fechaEjecucion | date:"yyyy/MM/dd HH:mm"}}</span>
+        <br>
+        <span class="tiempo-restante"><strong>Tiempo restante:</strong> {{tiempoRestante}}</span>
+    </div>
+</div>

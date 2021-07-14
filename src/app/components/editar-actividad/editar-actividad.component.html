@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Crear tarea</h2>
+<mat-dialog-content>
+    <form [formGroup]="actividadForm">
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="nombre" placeholder="Nombre">
+                <mat-icon matSuffix>task</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Descripción</mat-label>
+                <input matInput formControlName="descripcion" placeholder="Descripción">
+                <mat-icon matSuffix>description</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Fecha de ejecución</mat-label>
+                <input matInput formControlName="fechaEjecucion" [matDatepicker]="datepicker">
+                <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker>
+                    <mat-datepicker-actions>
+                        <button mat-button matDatepickerCancel>Cancelar</button>
+                        <button mat-raised-button color="primary" matDatepickerApply>Aceptar</button>
+                    </mat-datepicker-actions>
+                </mat-datepicker>
+            </mat-form-field>
+        </p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Asignar usuario</mat-label>
+            <mat-select formControlName="usuario">
+                <mat-option *ngFor="let usuario of usuarios" [value]="usuario.id">
+                    {{usuario.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-raised-button [mat-dialog-close]="true" color="primary" (click)="guardar()" [disabled]="actividadForm.invalid">Crear</button>
+</mat-dialog-actions>
